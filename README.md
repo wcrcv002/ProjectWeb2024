@@ -2,9 +2,9 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 ## ส่วนครู 
-Teacher.vue 
-นักเรียน
-Students.vue
+src/components/Teacher.vue 
+## นักเรียน 
+src/components/Students.vue
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
