@@ -55,26 +55,30 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2 v-if="isSignIn">Signed In User: {{ user }}</h2>
-    <br>
-    <div id="logout" v-if="isSignIn">
-      <button @click="handleSignOut">logout</button>
-    </div>
-    <br>
-    <div id="content">
-      <h3 v-if="isAdmin">
-        <Teacher />
-      </h3>
-      <p v-else>
-        <Student />
-      </p>
-    </div>
-    <br>
-    <div id="GoogleSignin" v-if="!isSignIn">
-      <h3>Google Signin</h3>
-      <button @click="handleSignIn">login</button>
+  <div>
+    <header>
+      <div id="logout" v-if="isSignIn">
+        <button @click="handleSignOut">logout</button>
+      </div>
+      <div id="GoogleSignin" v-if="!isSignIn">
+        <h3>Google Signin</h3>
+        <button @click="handleSignIn">login</button>
+      </div>
+    </header>
+    <div class="hello">
+      <h1>{{ msg }}</h1>
+      <br>
+      <div id="content">
+        <h3 v-if="isAdmin">
+          <h2 v-if="isSignIn">สวัสดีอาจารย์: {{ user }}</h2>
+          <Teacher />
+        </h3>
+        <p v-else>
+          <h2 v-if="isSignIn">สวัสดีคุณ: {{ user }}</h2>
+          <Student />
+        </p>
+      </div>
+      <br>
     </div>
   </div>
 </template>

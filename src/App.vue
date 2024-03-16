@@ -1,10 +1,13 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import naviga from './components/nav.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <div id="app">
+      <HelloWorld />
+
+  </div>
 </template>
 
 <style scoped>
