@@ -170,8 +170,8 @@ export default {
         const collectorData = {
           stdID: this.userData.stdID,
           class_date: serverTimestamp(),
-          room: 'SC6969',
-          subject: 'CP9999'
+          room: 'SC6601B',
+          subject: ' SC362202'
         };
         const docRef = await addDoc(collection(db, 'checkin'), collectorData);
         console.log('Document written with ID: ', docRef.id);
