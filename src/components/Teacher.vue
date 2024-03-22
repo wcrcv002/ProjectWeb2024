@@ -29,12 +29,11 @@
       <div v-for="(question, index) in questions" :key="index">
         <p>คำถาม: {{ question.text }}</p>
         <textarea v-model="question.text" placeholder="กรุณากรอกคำถาม"></textarea>
-        <v-btn variant="tonal" @click="fetchStudentAnswers(index)">แสดงคำตอบทั้งหมด</v-btn>
+        <button @click="fetchStudentAnswers(index)">แสดงคำตอบทั้งหมด</button>
         <div v-if="question.answers.length">
           <h2>แสดงคำตอบ</h2>
           <ul>
-            <li v-for="(answer, answerIndex) in question.answers.filter(answer => answer.questionId === question.id)"
-              :key="answerIndex">
+            <li v-for="(answer, answerIndex) in question.answers.filter(answer => answer.questionId === question.id)" :key="answerIndex">
               <p>Student ID: {{ answer.studentID }}</p>
               <p>Answer: {{ answer.answer }}</p>
             </li>
@@ -180,15 +179,6 @@ export default {
       } catch (error) {
         console.error('Error creating new collector:', error);
       }
-    }, async toggleCheckinSection() {
-      this.checkinDataVisible = !this.checkinDataVisible;
-      this.userDataVisible = false;
-      this.questionVisible = false;
-    },
-    async toggleQuestionSection() {
-      this.questionVisible = !this.questionVisible;
-      this.userDataVisible = false;
-      this.checkinDataVisible = false;
     }, formatTime(timestamp) {
       const date = new Date(timestamp.seconds * 1000); // Convert seconds to milliseconds
       const hours = ('0' + date.getHours()).slice(-2); // Get hours (with leading zero)
@@ -245,6 +235,9 @@ export default {
         console.error('Error fetching answers:', error);
       }
     }
+  
+
+
   },
   formatDate(date) {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
