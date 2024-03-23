@@ -61,7 +61,11 @@ onMounted(() => {
         <h2 v-if="isSignIn">{{ user }}</h2>
       </h3>
       <p v-else>
+<<<<<<< HEAD
         <h2 v-if="isSignIn"> {{ user }}</h2>
+=======
+        <h2 v-if="isSignIn">{{ user }}</h2>
+>>>>>>> 2fb8f6af1e86c450d776dd0ea8c98c33d41bc7f2
       </p>
       <div class="logbutton">
         <div id="logout" v-if="isSignIn">
